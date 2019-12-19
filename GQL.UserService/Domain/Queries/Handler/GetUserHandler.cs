@@ -1,4 +1,5 @@
 ﻿using GQL.Core;
+using GQL.Core.DomainContracts;
 using GQL.UserService.Data;
 using GQL.UserService.Domain.Queries.Query;
 using GQL.UserService.Domain.Queries.Result;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GQL.UserService.Domain.Queries.Handler
 {
-    public class GetUserHandler : IQueryHandler<Query.GetUserQuery, GetUserResult>
+    public class GetUserHandler : IQueryHandler<GetUserQuery, GetUserResult>
     {
         private readonly Query.GetUserQuery _query;
         private readonly AuthContext _ctx;

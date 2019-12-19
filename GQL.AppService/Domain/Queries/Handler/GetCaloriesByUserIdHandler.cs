@@ -3,6 +3,7 @@ using GQL.AppService.Domain.Models;
 using GQL.AppService.Domain.Queries.Query;
 using GQL.AppService.Domain.Queries.Result;
 using GQL.Core;
+using GQL.Core.DomainContracts;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;

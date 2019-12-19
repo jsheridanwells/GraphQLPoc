@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 
-namespace GQL.Core
+namespace GQL.Core.DomainContracts
 {
     public interface IQueryHandler<in TQuery, TResponse>
-        where TQuery : IQuery<TResponse>
+        where TResponse : ResultBase where TQuery : IQuery<TResponse>
     {
         Task<TResponse> GetAsync();
     }

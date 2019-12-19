@@ -2,6 +2,7 @@
 using GQL.AppService.Domain.Commands.Command;
 using GQL.AppService.Domain.Commands.Result;
 using GQL.Core;
+using GQL.Core.DomainContracts;
 using System.Threading.Tasks;
 
 namespace GQL.AppService.Domain.Commands.Handler

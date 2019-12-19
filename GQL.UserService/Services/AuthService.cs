@@ -18,6 +18,7 @@ namespace GQL.UserService.Services
         Task<GetUserResult> GetUserAsync(string id);
         Task<RegisterUserResult> RegisterUserAsync(UserRegistration userRegistration);
         Task<AuthenticateUserResult> AuthenticateUserAsync(UserAuthentication userAuthentication);
+        Task<GetApiKeyResult> GetApiKeyAsync(string key);
     }
 
     public class AuthService : IAuthService
@@ -64,6 +65,13 @@ namespace GQL.UserService.Services
             var command = new AuthenticateUserCommand(userAuthentication);
             var handler = _commands.Build(command);
             return await handler.ExecuteAsync();
+        }
+
+        public async Task<GetApiKeyResult> GetApiKeyAsync(string key)
+        {
+            var query = new GetApiKeyQuery(key);
+            var handler = _queries.Build(query);
+            return await handler.GetAsync();
         }
     }
 }

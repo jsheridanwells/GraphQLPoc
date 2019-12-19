@@ -11,6 +11,7 @@ namespace GQL.UserService.Data
         public AuthContext(DbContextOptions<AuthContext> opts) : base(opts) { }
 
         public DbSet<UserEntity> Users { get; set; }
+        public DbSet<ApiKeyEntity> ApiKeys { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -19,6 +20,15 @@ namespace GQL.UserService.Data
             builder.Entity<UserEntity>()
                 .HasIndex(u => u.Email)
                 .IsUnique();
+
+            builder.Entity<ApiKeyEntity>()
+                .HasKey(k => k.Id);
+            builder.Entity<ApiKeyEntity>()
+                .Property(x => x.Roles)
+                .HasConversion(
+                    x => string.Join(',', x),
+                    x => x.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                );            
         }
     }
 }

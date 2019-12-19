@@ -29,6 +29,11 @@ namespace GQL.AppService
                 opts.UseSqlServer(cs);
             });
 
+            services.AddAuthentication(opts =>
+            {
+                // 
+            });
+
             services.AddTransient<IQueryFactory, QueryFactory>();
             services.AddTransient<ICommandFactory, CommandFactory>();
             services.AddTransient<IWeightService, WeightService>();

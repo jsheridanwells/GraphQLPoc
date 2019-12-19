@@ -1,4 +1,5 @@
 ﻿using GQL.Core;
+using GQL.Core.DomainContracts;
 using GQL.UserService.Data;
 using GQL.UserService.Domain.Queries.Handler;
 using GQL.UserService.Domain.Queries.Query;
@@ -8,7 +9,8 @@ namespace GQL.UserService.Domain.Queries
 {
     public interface IQueryFactory
     {
-        IQueryHandler<Query.GetUserQuery, GetUserResult> Build(GetUserQuery query);
+        IQueryHandler<GetUserQuery, GetUserResult> Build(GetUserQuery query);
+        IQueryHandler<GetApiKeyQuery, GetApiKeyResult> Build(GetApiKeyQuery query);
     }
     
     public class QueryFactory : IQueryFactory
@@ -20,5 +22,8 @@ namespace GQL.UserService.Domain.Queries
 
         public IQueryHandler<Query.GetUserQuery, GetUserResult> Build(Query.GetUserQuery query) 
             => new GetUserHandler(query, _ctx);
+
+        public IQueryHandler<GetApiKeyQuery, GetApiKeyResult> Build(GetApiKeyQuery query)
+            => new GetApiKeyHandler(query, _ctx);   
     }
 }

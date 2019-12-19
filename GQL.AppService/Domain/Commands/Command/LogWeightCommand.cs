@@ -1,6 +1,7 @@
 ﻿using GQL.AppService.Domain.Commands.Result;
 using GQL.AppService.Domain.Models;
 using GQL.Core;
+using GQL.Core.DomainContracts;
 
 namespace GQL.AppService.Domain.Commands.Command
 {

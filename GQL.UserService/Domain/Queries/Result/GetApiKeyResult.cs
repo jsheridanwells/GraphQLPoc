@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GQL.AppService.Domain.Commands.Result
+namespace GQL.UserService.Domain.Queries.Result
 {
-    public class LogWeightResult : ResultBase
+    public class GetApiKeyResult : ResultBase
     {
+        public string ApiKey { get; set; }
     }
 }

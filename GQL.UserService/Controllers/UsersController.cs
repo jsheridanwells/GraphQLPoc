@@ -35,6 +35,6 @@ namespace GQL.UserService.Controllers
                 // TODO : add exception logging 
                 return BadRequest();
             }
-        }
+        }         
     }
 }

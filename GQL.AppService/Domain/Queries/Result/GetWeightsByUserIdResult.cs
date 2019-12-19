@@ -1,5 +1,6 @@
 ﻿using GQL.AppService.Domain.Models;
 using GQL.Core;
+using GQL.Core.DomainContracts;
 using System.Collections.Generic;
 
 namespace GQL.AppService.Domain.Queries.Result

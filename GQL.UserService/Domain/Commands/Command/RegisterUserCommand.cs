@@ -1,4 +1,5 @@
 ﻿using GQL.Core;
+using GQL.Core.DomainContracts;
 using GQL.UserService.Domain.Commands.Result;
 using GQL.UserService.Domain.Models;
 using System;

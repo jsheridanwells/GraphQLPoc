@@ -13,7 +13,7 @@ namespace GQL.UserService.Controllers
         private readonly IAuthService _authService;
         public AuthController(IAuthService authService)
         {
-            _authService = authService;
+            _authService = authService; 
         }
 
         [AllowAnonymous]
@@ -36,10 +36,17 @@ namespace GQL.UserService.Controllers
         {
             var result = await _authService.AuthenticateUserAsync(userAuthentication);
             if (result.IsSuccess)
-                return Ok(result);
+                return Ok( new { result.IsSuccess, result.Token, result.User });
             else
                 // TODO : add exception logging
                 return BadRequest(result.Message);
+        }
+
+        [HttpGet("Key/{key}")]
+        public async Task<IActionResult> GetApiKey(string key)
+        {
+            var result = await _authService.GetApiKeyAsync(key);
+            return Ok(new { result.ApiKey, result.IsSuccess });
         }
     }
 }

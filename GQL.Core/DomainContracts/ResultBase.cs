@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GQL.Core
+namespace GQL.Core.DomainContracts
 {
     public abstract class ResultBase
     {

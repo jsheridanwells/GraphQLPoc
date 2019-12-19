@@ -2,11 +2,7 @@
 using GQL.AppService.Domain.Queries.Handler;
 using GQL.AppService.Domain.Queries.Query;
 using GQL.AppService.Domain.Queries.Result;
-using GQL.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using GQL.Core.DomainContracts;
 
 namespace GQL.AppService.Domain.Queries
 {
